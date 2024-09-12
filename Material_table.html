@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <title>UTILE show material table</title>
+
+      <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href= "https//cdn.datatables.net/2.1.5/css/dataTables.dataTables.min.css rel="stylesheet">
+
+  </head>
+  <body>
+
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAddMaterial">
+    + New material
+  </button>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAddMaterial">
+    + New Product
+  </button>
+
+
+  <table id="myTable" class="display noWrap dataTable dtr-inline collapsed">
+    <colgroup>
+      <col data-dt-column="0" style="width: 143.578px; min-width: 143.578px;">
+      <col data-dt-column="1" style="width: 143.578px; min-width: 143.578px;">
+      <col data-dt-column="2" style="width: 143.578px; min-width: 143.578px;">
+      <col data-dt-column="3" style="width: 143.578px; min-width: 143.578px;">
+      <col data-dt-column="4" style="width: 143.578px; min-width: 143.578px;">
+      <col data-dt-column="5" style="width: 143.578px; min-width: 143.578px;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Country</th>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Number</th>
+            <th>Colour</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>001</td>
+            <td>France</td>
+            <td>Helmet</td>
+            <td>Armour Helmet</td>
+            <td>5000</td>
+	    <td>Green</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>Spain</td>
+            <td>Helmet</td>
+            <td>HEL 01</td>
+            <td>3000</td>
+	    <td>Black</td>         
+        </tr>
+    </tbody>
+  </table>
+
+
+  <div class="modal fade bg-secondary py-5" tabindex="-1" role="dialog" id="modalAddMaterial">
+    <div class="modal-dialog modal-lg" style="width:90%" role="document">
+      <div class="modal-content rounded-5 shadow">
+
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+          <h2 class="fw-bold mb-0">Add new material</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body p-5 pt-0">
+    	  <form>
+
+            <div class="form-group row">
+		<div class="input-group mb-3">
+                  <label for="inputName" class="col-sm-3 col-form-label">Name</label>
+                  <input type="text" class="form-control" id="inputName">
+		</div>
+            </div>
+
+            <div class="form-group row">
+		<div class="input-group mb-3">
+                  <label for="inputSpecificDensity" class="col-sm-3 col-form-label">Specific Density</label>
+                  <input type="number" class="form-control" id="inputSpecificDensity">
+                  <div class="input-group-append">
+                    <span class="input-group-text">lb/inch<sup>3</sup> </span>
+                  </div>
+		</div>
+            </div>
+
+            <div class="form-group row">
+		<div class="input-group mb-3">
+                  <label for="inputTenacity" class="col-sm-3 col-form-label">Tenacity</label>
+                  <input type="number" class="form-control" "inputTenacity">
+                  <div class="input-group-append">
+                    <span class="input-group-text">psi</span>
+                  </div>
+		</div>
+            </div>
+
+            <div class="form-group row">
+		<div class="input-group mb-3">
+                  <label for="inputModulus" class="col-sm-3 col-form-label">Modulus</label>
+                  <input type="number" class="form-control" id="inputModulus">
+                  <div class="input-group-append">
+                    <span class="input-group-text">psi</span>
+                  </div>
+		</div>
+            </div>
+
+            <div class="form-group row">
+		<div class="input-group mb-3">
+                  <label for="inputBreakElongation" class="col-sm-3 col-form-label">Break Elongation</label>
+                  <input type="number" class="form-control" id="inputBreakElongation">
+                  <div class="input-group-append">
+                    <span class="input-group-text">%</span>
+                  </div>
+		</div>
+            </div>
+
+          <div class="form-group row">
+		<div class="input-group mb-3">
+                  <label for="inputSpecificTensileStrength" class="col-sm-3 col-form-label">Specific Tensile Strength</label>
+                  <input type="number" class="form-control" id="inputSpecificTensileStrength">
+                  <div class="input-group-append">
+                    <span class="input-group-text">10<sup>6</sup></span>
+                  </div>
+		</div>
+            </div>
+
+          <div class="form-group row">
+		<div class="input-group mb-3">
+                  <label for="inputCTE" class="col-sm-3 col-form-label">Coefficient of Thermal Expansion (CTE)</label>
+                  <input type="number" class="form-control" id="inputCTE">
+                  <div class="input-group-append">
+                    <span class="input-group-text">10<sup>-6</sup>/°C</span>
+                  </div>
+		</div>
+            </div>
+
+          <div class="form-group row">
+		<div class="input-group mb-3">
+                  <label for="inputDecompositionTemp" class="col-sm-3 col-form-label">Decompoistion Temperature</label>
+                  <input type="number" class="form-control" id="inputDecompositionTemp">
+                  <div class="input-group-append">
+                    <span class="input-group-text">°C</span>
+                  </div>
+		</div>
+            </div>
+
+  	    <div class="form-group row">
+              <div class="col-sm-10">
+		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save Material</button>
+	        <button type="reset" class="btn btn-primary value="Reset">Reset</button>
+	      </div>
+            </div>
+
+  	</div>
+ 
+  </div>
+
+
+    <!-- Bootstrap Javascripts -->  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.5/js/dataTables.min.js"></script>
+    
+    <script>
+	$(document).ready( function () {
+          $('#myTable').DataTable();
+        } );	
+    </script>
+
+  </body>    
+</html> 
