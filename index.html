@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
-      <title>UTILE show material table</title>
+      <title>UTILE inventory</title>
 
-      <!-- Bootstrap CSS -->
+      <!-- external CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href= "https//cdn.datatables.net/2.1.5/css/dataTables.dataTables.min.css" rel="stylesheet">
+    <link href= "https://cdn.datatables.net/2.1.6/css/dataTables.dataTables.css" rel="stylesheet">
+    <link href= "https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" rel="stylesheet">
 
-
-     <!-- CSS -->
+     <!-- custom CSS -->
     <style>
     .logo {
       height: 60px;
@@ -762,9 +762,8 @@
                     <option value="" selected="selected">(please select)</option>
                     <option value="AT">Austria</option>
                     <option value="BE">Belgium</option>
-                    <option value="BZ">Belize</option>
                     <option value="BG">Bulgaria</option>
-                    <option value="HR">Croatia (Hrvatska)</option>
+                    <option value="HR">Croatia</option>
                     <option value="CY">Cyprus</option>
                     <option value="CZ">Czech Republic</option>
                     <option value="DK">Denmark</option>
@@ -864,6 +863,7 @@
 
     <!-- Bootstrap Javascripts -->  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdn.datatables.net/2.1.5/js/dataTables.min.js"></script>
     
     <script>
@@ -874,11 +874,9 @@
 
       function addRow(){
 
-        alert("Item added to inventorys");
         let table = document.getElementById("myTable");
         let row = table.insertRow(-1); // We are adding at the end
-        alert(row);
-     
+
         // Create table cells
         let c1 = row.insertCell(0);
         let c2 = row.insertCell(1);
@@ -888,14 +886,16 @@
         let c6 = row.insertCell(5);
         let c7 = row.insertCell(6);
 
-        // Add data to c1 and c2
-        c1.innerText = "Sept 18, 2024"
-        c2.innerText = "Austria"
-        c3.innerText = "Helmet"
-        c4.innerText = "Batlskin Viper"
-        c5.innerText = "2500"
-        c6.innerText = "Tan"
-        c7.innerText = "Sample colour description"
+        // Add data
+        c1.innerText = "Sept 18, 2024";
+        c2.innerText = "Austria";
+        c3.innerText = "Helmet";
+        c4.innerText = "Batlskin Viper";
+        c5.innerText = "2500";
+        c6.innerText = "Tan";
+        c7.innerText = "Sample colour description";
+
+        $('#myTable').DataTable().ajax.reload();
 
       }
     </script>
